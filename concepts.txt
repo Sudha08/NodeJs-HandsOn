@@ -1,0 +1,111 @@
+Node Js:
+--------------------------------------------------------------------
+
+Slide 1:
+----------
+1) Platform that allows us to run JavaScript on a computer or server.
+2) Read, delete / update files
+3) Easily communicate with a database
+
+Why Node js is popular?
+---------------------------
+1) it uses javascript
+2)very fast( runs on v8 engine & uses non blocking code)
+3) open source community & npm (huge amount of open source packages)
+4)Great for real time services (like chats)
+
+3 sections
+------------------
+1) Inner workings of Node Js
+	* v8 engine
+	* Modules
+	* event emitter
+	* the file system
+2) Creating the web server
+	* Routing
+	* Express
+	* Templating
+3) Sample to do app
+----------------------------------------------------
+ATOM editor - atom.io
+----------------------------------------------------
+
+Pre requisites
+------------------
+
+1) JavaScript
+2) HTML
+3) little bit of command line
+----------------------------------------------------
+
+How to install Node Js?
+-------------------------------------------
+
+nodejs.org (recommend the stable version & not the latest version)
+
+check if node is installed in your system - cmd -> node -v
+check for a package that allows to run node cmds in VS code ------> NEED TO DO
+
+------------------------------------------------------
+
+V8 engine - heart of node js
+-----------------------------------------
+
+JavaScript engines
+-------------------
+1) computer doesnot understand javascript
+2) A javascript engine converts the javascript to machine code
+3) Node js is written in C++, it allows us to write code in javascript that can be run in a computer or server
+4) Node js uses the v8 engine (embedded into node js) (which is also written in C++) - helps in the conversion of javascript to machine code
+
+https://developers.google.com/v8/
+
+JavaScript
+    |
+C++ Node JS v8 -> 
+    |
+Machine code
+
+---------------------------------------------
+The Global object
+---------------------------------------------
+
+https://nodejs.org/api/globals.html
+
+1) In the browser, the global object is the window - where number of operations like alert, scroll, setTimeout, setInterval can be performed.
+2) In Node js, the global object is an object called 'Global' - which provides inbuilt methods of similar operations.
+
+-------------------------------------------
+Function Expressions
+-------------------------------------------
+
+check - handsOn - function Expressions.js
+
+-------------------------------------------
+Modules - Require & Export & diff. module patterns
+-------------------------------------------
+
+2 types of modules - core & custom
+
+eg:- for core - events, fs, util, http, etc., - number of core modules available in NPM - express, cucumber, etc.,
+
+check - handsOn - ModulesRequire.js & useRequire.js -- for custom
+
+-------------------------------------------
+Node - event emitter
+-------------------------------------------
+
+using the core module - "events" & "util"
+
+check - handsOn - events.js
+
+-------------------------------------------
+Reading and Writing files
+-------------------------------------------
+check - handsOn - files.js
+
+-------------------------------------------
+
+
+
+
