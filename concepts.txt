@@ -106,6 +106,108 @@ check - handsOn - files.js
 
 -------------------------------------------
 
+creating and removing directories
+-------------------------------------------
+check - handson - Directories.js
 
+-------------------------------------------
+Clients & Servers
+-------------------------------------------
+
+ ________            ________       
+|        | Request  |        |
+| Client | ------>  | Server |
+|        | Response |        |
+|________| <------- |________|
+
+
+- The client & server communicate wth eachother using protocols
+
+------------
+protocols
+------------
+- set of communication rules which 2 sides agree to use when communicating
+
+ ________            ________       
+|        |  socket  |        |
+| Client | <------> | Server |
+|        |          |        |
+|________|          |________|
+ ip -                 ip -
+
+
+- In order to communicate, the client need to connect to the Ip of the server
+  by opening a socket (a channel for sending info.)
+- The information will be structured using any of the protocols 
+  (either. http - for web apps/ ftp - for files)
+
+             TCP (transmission control protocol)
+
+             socket
+    client <-------o-o-o-    o -> Packets (structured using http/ftp)
+
+- The communication b/wn client & server is done using TCP
+
+******
+Ports - A program running on a computer can listen for requests sent to a particular port no.     
+******
+       - 10.148.10.22:3000 (server Ip : port) 
+	   - In a computer multiple programs can be running and the specific program only responds
+	     when the port number in which it is hosted is passed from the client.
+	   - The program will be listening to the port & respond when a request is made
+
+*****************
+Response Headers
+******************
+
+ ________                             ________       
+|        | Request + Req. Headers    |        |
+| Client | ----------------------->  | Server |
+|        | Response + Res. Headers   |        |
+|________| <-----------------------  |________|
+
+
+Headers - extra info. about the req / res
+
+Response Headers - content-type --> plain text, html, JSON, XML
+                    status --> 200 - OK, 404 - Page not found
+--------------------------------------
+Creating a server
+--------------------------------------
+ check - handsOn - server.js
+
+--------------------------------------
+
+Streams & Buffers
+--------------------------------------
+**********
+Buffer
+**********
+                                                _________
+                           _________           |         |   
+   Data Passed On <-----  | EEEEEE  |  <--E--  |  DATA   |  E = chunk of data
+                          |_________|          |         |
+                                               |_________|
+
+
+- Temporary storage spot for a chunk of data thst is being transferred from one place to another
+- The buffer is filled with data and then passed along
+- Transfer small chunks of data at a time
+
+********
+Streams
+********
+
+      Data passed on & 
+	   processed                        BUFFER
+ _________          ________           _________
+| CLIENT  | <----- | DATA   | <------ | EEEEEE  | <--E--E--E--E--E--E----
+|_________|        |________|         |_________|
+
+												  E = Chunk of data	
+
+- stream of dats that flows from one place to another overtime 
+- can create streams in NodeJS to transfer data
+- increase performance
 
 

@@ -32,6 +32,3 @@ myEmitter.emit('someEvent', 'The event was emitted'); // event emitter
 
 // sudha.emit('speak', 'Hey dudes');
 // thils.emit('speak', 'I want curry');
-
-
-
