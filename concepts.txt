@@ -255,5 +255,56 @@ PIPES
 	  V
    ________
   | CLIENT |  	
-  |________|  
+  |________| 
+
+-----------------------------
+NPM
+-----------------------------
+	- NPM - huge ecosystem of third party packages / modules
+	- npmjs.com
+	- try and install express - The other modules that are installed other than express are the dependencies.
+	                            Express can function properly only when all the dependencies are available.
+								Node recognizes that and installs all the dependant modules.
+
+------------------------------
+package.json
+------------------------------
+	- used to keep track all the modules that our application depends on
+	- cmd - npm init
+
+-----------------------------
+install nodemon
+-----------------------------
+
+npm install nodemon -g (global installation) - cover local / global installation
+
+Module to continously monitor the changes in the application and restart the server
+
+-----------------------------
+Express
+-----------------------------
+
+	- Easy and flexible routing system
+	- Integrates with many templating engines
+	- contains a middleware framework
+
+	HTTP methods (Express helps to respond to all these requests very easily)
+		- GET
+		- POST
+		- DELETE
+		- PUT
+
+	`````````````````````````	
+	Responding to requests :
+
+	`````````````````````````
+	- GET - app.get('route', fn)
+	- POST - app.post('route', fn)
+	- DELETE - app.delete('route', fn)
+	- PUT - app.put('route', fn)
+	
+
+
+
+
 

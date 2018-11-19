@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-handson",
+  "version": "1.0.0",
+  "description": "NodeJs handson & a sample app",
+  "main": "routes.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node routes.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sudha08/NodeJs-HandsOn.git"
+  },
+  "keywords": [
+    "sudha",
+    "fun"
+  ],
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sudha08/NodeJs-HandsOn/issues"
+  },
+  "homepage": "https://github.com/Sudha08/NodeJs-HandsOn#readme"
+}
