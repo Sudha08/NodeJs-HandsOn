@@ -1,7 +1,7 @@
 NodeJS:
 --------------------------------------------------------------------
 
-Slide 1:
+Intro:
 ----------
 1) Platform that allows us to run JavaScript on a computer or server.
 2) Read, delete / update files
@@ -44,8 +44,6 @@ How to install NodeJS?
 nodejs.org (recommend the stable version & not the latest version)
 
 check if node is installed in your system - cmd -> node -v
-check for a package that allows to run node cmds in VS code ------> NEED TO DO
-
 ------------------------------------------------------
 V8 engine - Heart of NodeJS
 -----------------------------------------
@@ -58,12 +56,23 @@ JavaScript engines
 4) Node JS uses the v8 engine (embedded into NodeJS) (which is also written in C++) - helps in the conversion of javascript to machine code
 
 https://developers.google.com/v8/
-
-JavaScript
-    |
-C++ NodeJS v8 -> 
-    |
-Machine code
+				 ______________
+				|  JavaScript  |
+				|______________|
+						|
+						|
+						V
+		 __________________________________
+		|  ______                 _____    |
+		| | C++  |   Node.js     | V8  |   |
+		| |______|               |_____|   |
+		|__________________________________|
+						|
+						|
+						V
+				 ________________
+				|  Machine Code  |
+				|________________|
 
 ---------------------------------------------
 The Global object
@@ -135,7 +144,7 @@ protocols
  ip -                 ip -
 
 
-- In order to communicate, the client need to connect to the Ip of the server
+- In order to communicate, the client needs to connect to the Ip of the server
   by opening a socket (a channel for sending info.)
 - The information will be structured using any of the protocols 
   (either. http - for web apps/ ftp - for files)
@@ -179,9 +188,9 @@ Creating a server
 
 Streams & Buffers
 --------------------------------------
-**********
+*******
 Buffer
-**********
+*******
                                             _________
                        _________           |         |   
    Data chunk <-----  | EEEEEE  |  <--E--  |  DATA   |  E = Piece of data
@@ -189,7 +198,7 @@ Buffer
                                            |_________|
 
 
-- Temporary storage spot for a chunk of data thst is being transferred from one place to another
+- Temporary storage spot for a chunk of data that is being transferred from one place to another
 - The buffer is filled with data and then passed along
 - Transfer small chunks of data at a time
 
@@ -258,7 +267,7 @@ PIPES
   |________| 
 
 -----------------------------
-NPM
+NPM - Node package Manager
 -----------------------------
 	- NPM - huge ecosystem of third party packages / modules
 	- npmjs.com
@@ -269,8 +278,8 @@ NPM
 ------------------------------
 package.json
 ------------------------------
-	- used to keep track all the modules that our application depends on
-	- cmd - npm init
+	- used to keep track of all the modules that our application depends on
+	- cmd to create - npm init
 
 -----------------------------
 install nodemon
