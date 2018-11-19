@@ -1,4 +1,4 @@
-Node Js:
+NodeJS:
 --------------------------------------------------------------------
 
 Slide 1:
@@ -7,16 +7,16 @@ Slide 1:
 2) Read, delete / update files
 3) Easily communicate with a database
 
-Why Node js is popular?
+Why NodeJS is popular?
 ---------------------------
-1) it uses javascript
-2)very fast( runs on v8 engine & uses non blocking code)
-3) open source community & npm (huge amount of open source packages)
-4)Great for real time services (like chats)
+1) It uses javascript
+2) Very fast( runs on v8 engine & uses non blocking code)
+3) Open source community & npm (huge amount of open source packages)
+4) Great for real time services (like chats)
 
 3 sections
 ------------------
-1) Inner workings of Node Js
+1) Inner workings of NodeJS
 	* v8 engine
 	* Modules
 	* event emitter
@@ -38,7 +38,7 @@ Pre requisites
 3) little bit of command line
 ----------------------------------------------------
 
-How to install Node Js?
+How to install NodeJS?
 -------------------------------------------
 
 nodejs.org (recommend the stable version & not the latest version)
@@ -47,22 +47,21 @@ check if node is installed in your system - cmd -> node -v
 check for a package that allows to run node cmds in VS code ------> NEED TO DO
 
 ------------------------------------------------------
-
-V8 engine - heart of node js
+V8 engine - Heart of NodeJS
 -----------------------------------------
 
 JavaScript engines
 -------------------
 1) computer doesnot understand javascript
 2) A javascript engine converts the javascript to machine code
-3) Node js is written in C++, it allows us to write code in javascript that can be run in a computer or server
-4) Node js uses the v8 engine (embedded into node js) (which is also written in C++) - helps in the conversion of javascript to machine code
+3) Node JS is written in C++, it allows us to write code in javascript that can be run in a computer or server
+4) Node JS uses the v8 engine (embedded into NodeJS) (which is also written in C++) - helps in the conversion of javascript to machine code
 
 https://developers.google.com/v8/
 
 JavaScript
     |
-C++ Node JS v8 -> 
+C++ NodeJS v8 -> 
     |
 Machine code
 
@@ -70,10 +69,10 @@ Machine code
 The Global object
 ---------------------------------------------
 
-https://nodejs.org/api/globals.html
+https://nodeJS.org/api/globals.html
 
 1) In the browser, the global object is the window - where number of operations like alert, scroll, setTimeout, setInterval can be performed.
-2) In Node js, the global object is an object called 'Global' - which provides inbuilt methods of similar operations.
+2) In Node JS, the global object is an object called 'Global' - which provides inbuilt methods of similar operations.
 
 -------------------------------------------
 Function Expressions
@@ -108,7 +107,7 @@ check - handsOn - files.js
 
 creating and removing directories
 -------------------------------------------
-check - handson - Directories.js
+check - handsOn - Directories.js
 
 -------------------------------------------
 Clients & Servers
@@ -183,11 +182,11 @@ Streams & Buffers
 **********
 Buffer
 **********
-                                                _________
-                           _________           |         |   
-   Data Passed On <-----  | EEEEEE  |  <--E--  |  DATA   |  E = chunk of data
-                          |_________|          |         |
-                                               |_________|
+                                            _________
+                       _________           |         |   
+   Data chunk <-----  | EEEEEE  |  <--E--  |  DATA   |  E = Piece of data
+   Passed On          |_________|          |         |
+                                           |_________|
 
 
 - Temporary storage spot for a chunk of data thst is being transferred from one place to another
@@ -203,11 +202,58 @@ Streams
  _________          ________           _________
 | CLIENT  | <----- | DATA   | <------ | EEEEEE  | <--E--E--E--E--E--E----
 |_________|        |________|         |_________|
+                                     Once the buffer if full
+									 the data is passed on
 
-												  E = Chunk of data	
+												              E = Piece of data
+														_______
+													   | DATA  | = Chunk of data	  	
+                                                       |_______|
 
 - stream of dats that flows from one place to another overtime 
 - can create streams in NodeJS to transfer data
 - increase performance
 
+`````````
+3 types:
+`````````
+
+- Writable Streams - allow NodeJS to write data to a stream (passing huge data to the client)
+- Readable Streams - allow NodeJs to read data from a stream (Reading a huge file)
+- Duplex streams - can read and write to a stream
+
+refer handsOn - streams.js
+
+------------------------------
+PIPES
+------------------------------
+
+- Don't need to manually listen to events
+- Don't need to manually write into a writable stream
+
+
+ ___________                   
+|           |                  BUFFER
+|	PIPE   ________           _________
+|     ___ | CHUNK  | <------ | EEEEEE  | <--E--E--E--E--E--E----
+|    |    |________|         |_________|
+|__  |   ___|
+   | |  |                    When the buffer if full
+   | V	|					 the data is passed on
+   |____|
+	 ___											              E = Piece of data
+	| C	|												    _______
+	| H	| WRITE											   | DATA  | = Chunk of data	  	
+    | U | STREAM                                           |_______|
+    | N |
+	| K |
+    |___|
+
+      |
+	  |
+	  |
+	  V
+   ________
+  | CLIENT |  	
+  |________|  
 
