@@ -202,7 +202,7 @@ Buffer
 - The buffer is filled with data and then passed along
 - Transfer small chunks of data at a time
 
-********
+*********
 Streams
 ********
 
