@@ -202,7 +202,7 @@ Buffer
 - The buffer is filled with data and then passed along
 - Transfer small chunks of data at a time
 
-*********
+********
 Streams
 ********
 
@@ -289,6 +289,8 @@ npm install nodemon -g (global installation) - cover local / global installation
 
 Module to continously monitor the changes in the application and restart the server
 
+manual restart cmd - rs
+
 -----------------------------
 Express
 -----------------------------
@@ -311,7 +313,39 @@ Express
 	- POST - app.post('route', fn)
 	- DELETE - app.delete('route', fn)
 	- PUT - app.put('route', fn)
-	
+
+	refer handsOn - expRoute.js
+
+-------------------------------
+Templating engines
+-------------------------------
+
+- used to inject dynamic content into a html page
+- embed data in the javascript code into the html files
+- similar thing is used in ASP web forms <%= data %>
+- we can output actual javascript codes, control flow statements, etc.
+
+www.embeddedjs.com
+
+npm install ejs -save
+
+use `<%=` to output the data
+use `<%` to include any javascript code
+
+------------------------------
+Partial templates / views
+------------------------------
+
+- to have a common template to be used in all the views
+- eg: menu navigation (like menu - will be present in all pages)
+
+-----------------------------------
+Serving static files & middleware
+-----------------------------------
+
+
+
+
 
 
 
