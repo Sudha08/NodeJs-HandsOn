@@ -294,6 +294,7 @@ manual restart cmd - rs
 -----------------------------
 Express
 -----------------------------
+    npm install express -save (-save to save the module in package.json along with the existing packages)
 
 	- Easy and flexible routing system
 	- Integrates with many templating engines
@@ -332,6 +333,8 @@ npm install ejs -save
 use `<%=` to output the data
 use `<%` to include any javascript code
 
+refer handsOn - index.ejs, contatc.ejs, profile.ejs, expRoute.js
+
 ------------------------------
 Partial templates / views
 ------------------------------
@@ -339,9 +342,59 @@ Partial templates / views
 - to have a common template to be used in all the views
 - eg: menu navigation (like menu - will be present in all pages)
 
+refer handsOn - /views/partials/nav.ejs , index.ejs
+
 -----------------------------------
 Serving static files & middleware
 -----------------------------------
+
+Middleware - The code that runs b/wn the request & the response
+
+app.get('/contact', function(req, res) {  --> Request
+	Console.log('Do Something'); --> Middleware
+    res.sendFile(__dirname + '/contact.html'); -->Response
+});
+
+app.use --> to use some Middleware
+
+Eg: app.use('/assets', function (req, res, next) {
+		console.log(req.url);
+		next();
+	});
+
+	app.get();
+
+	'/assets' - route attached to the middleware
+	 next() - to specify node to run the next middleware/ next request
+	       - If next() is not used, the code will break
+
+refer handsOn - /assets/styles.css, expRoute.js
+
+-------------------------------------
+Query Strings
+-------------------------------------
+mysite.com/blog/news?page=2 --> the param after the '?' - page=2 is the query string
+mysite.com/contact?person=ryu&dept=marketing --> to pass 2 query string params
+
+refer handsOn - expRoute.js, contact.ejs
+
+-------------------------------------
+Handling POST requests
+-------------------------------------
+- POST is a request method
+- POST requests, ask the server to accept/store data which is enclosed in the body of the request
+- Often used when submitting forms
+
+npm install body-parser - save
+
+refer handsOn - expRoute.js, contact.ejs, contact-success.ejs
+
+module - Nodemailer - to send emails
+
+
+
+
+
 
 
 

@@ -1,9 +1,14 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 
 var app = express(); // to access all the different methods available in express
 
+var urlencodedParser = bodyParser.urlencoded({ extended: false }); // used to parse the req. data
+
 app.set('view engine', 'ejs'); // assign the template engine to Express
-app.use('/assets', express.static('assets'));
+
+app.use('/assets', express.static('assets')); // built in Middleware serve the static page
+                                        // express.static('assets') -> 'assets' is the folder name
 
 // app.get('/', function(req, res) { 
 //     res.send('this is the homepage');
@@ -43,8 +48,17 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
-app.get('/contact', function(req, res) {
-    res.render('contact');
+// app.get('/contact', function(req, res) {
+//     res.render('contact');
+// });
+
+app.get('/contact', function(req, res) {    
+    res.render('contact', {qs: req.query}); // pass the query strings to the view
+});
+
+app.post('/contact', urlencodedParser, function(req, res) {
+    console.log(req.body);
+    res.render('contact-success', {data: req.body}); // pass the query strings to the view
 });
 
 

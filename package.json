@@ -4,6 +4,7 @@
   "description": "NodeJs handson & a sample app",
   "main": "routes.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4"
   },
