@@ -149,10 +149,13 @@ protocols
 - The information will be structured using any of the protocols 
   (either. http - for web apps/ ftp - for files)
 
-             TCP (transmission control protocol)
+  ________________________________
+ |                                |
+ |            (TCP)               |
+ |           socket               |   TCP - transmission control protocol
+ |   client <-------o-o-o- server |   o -> Packets (structured using http/ftp)
+ |________________________________|
 
-             socket
-    client <-------o-o-o-    o -> Packets (structured using http/ftp)
 
 - The communication b/wn client & server is done using TCP
 
@@ -289,7 +292,9 @@ npm install nodemon -g (global installation) - cover local / global installation
 
 Module to continously monitor the changes in the application and restart the server
 
-manual restart cmd - rs
+cmd  to run the app with nodemon - "nodemon index" (index - app entry point)
+
+manual restart cmd - "rs"
 
 -----------------------------
 Express
